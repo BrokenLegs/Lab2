@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ForumsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -80,6 +81,7 @@
     <Compile Include="Models\Repositories\Repository.cs" />
     <Compile Include="Models\SessionManager\SessionManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ThreadViewModel.cs" />
     <Compile Include="ViewModels\UserDetailsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +172,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Users\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forums\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forums\Thread.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forums\CreatePost.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

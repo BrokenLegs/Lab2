@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Thread";
+}
+@using Lab2.Models.Entities
+@using Lab2.ViewModels
+
+@model ThreadViewModel
+           
+@Html.ActionLink("Create Post", "CreatePost" + "/" + Model.Thread.ID)
+<h2>@Html.LabelFor(ft => ft.Thread.Title) : @Model.Thread.Title</h2>
+
+<table>
+
+    <tr>
+        <th>@Html.LabelFor(p => p.Posts.FirstOrDefault().Title)</th>
+        <th>@Html.LabelFor(p => p.Posts.FirstOrDefault().CreateDate)</th>
+        <th>@Html.LabelFor(p => p.Posts.FirstOrDefault().Body)</th>
+    </tr>
+@foreach (var post in Model.Posts) { 
+    <tr>
+        <td>@Html.DisplayFor(t => post.Title)</td>
+        <td>@Html.DisplayFor(t => post.CreateDate)</td>
+        <td>@Html.DisplayFor(t => post.Body)</td>
+        
+    </tr>
+}
+
+
+</table>
+
