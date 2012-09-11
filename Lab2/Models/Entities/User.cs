@@ -44,10 +44,10 @@ namespace Lab2.Models.Entities
                     return "NoName";
                 else if (string.IsNullOrEmpty(FirstName))
                     return LastName;
-                /*
+                
                 else if (string.IsNullOrEmpty(LastName))
                     return FirstName;
-                */
+                
                 else
                     return string.Format("{0} {1}", FirstName, LastName);
             }

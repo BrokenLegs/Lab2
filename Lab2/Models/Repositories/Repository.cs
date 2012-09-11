@@ -125,6 +125,10 @@ namespace Lab2.Models.Repositories
             return All<User>().OrderBy(u => u.UserName).Skip(skip).Take(take).ToList();
         }
 
+        public List<User> GetAllUsers() {
+            return All<User>().OrderBy(u => u.UserName).ToList();
+        }
+
         // Hämta en användare baserat på dess användarnamn
         public User GetUserByUserName(string userName)
         {
@@ -157,6 +161,6 @@ namespace Lab2.Models.Repositories
             return All<User>().OrderBy(u => u.FullName).Where(u => u.Type == User.UserType.Admin).ToList();
         }
         
-
+        
     }
 }

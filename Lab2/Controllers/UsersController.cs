@@ -69,7 +69,29 @@ namespace Lab2.Controllers
             List<User> admins = Repository.Instance.GetSiteAdmins();
             return PartialView(admins);
         }
+        //Users:Get//
+        public ActionResult AdminPanel() {
+            List<User> users = Repository.Instance.GetAllUsers();
+            return View(users);
+        }
 
+        //Users / update
+        [HttpPost]
+        public ActionResult AdminPanel(List<User> users) {
+
+            foreach(var person in users)
+            if (person.Banned == true) {
+                User user = Repository.Instance.GetUserByUserName(person.UserName);
+                user = person;
+                user.Banned = true;
+            }
+            
+
+            
+            
+            
+            return RedirectToAction("AdminPanel");
+        }
        
     }
 }

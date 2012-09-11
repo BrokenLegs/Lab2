@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "AdminPanel";
+}
+
+
+
+@using Lab2.Models.Entities
+@model List<User>
+           
+
+<h2>AdminPanel</h2>
+
+@{ Html.EnableClientValidation(true); }
+@using (Html.BeginForm()) {
+<div>
+<table>
+<tr>
+    <th>User</th>
+    <th>Banned status</th>
+    <th>Ban?</th>
+    <th>Usertype</th>
+</tr>
+@foreach (var user in Model) { 
+    <tr>
+        
+        <td>@user.UserName</td>
+        <td>@user.Banned</td>
+        <td>@Html.EditorFor(u => user.Banned)</td>
+        <td>@user.Type</td>
+
+    </tr>
+}
+</table>
+</div>
+<div>
+    <input type="submit" value="Ban" />
+</div>
+}

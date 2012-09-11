@@ -1,15 +1,7 @@
-﻿
+﻿@using Lab2.Models.SessionManager
+@using Lab2.Models.Entities
 
 
-<table>
-<tr>
-    <th>User</th>
-    <th>Banned</th>
-</tr>
-@foreach (var user in Model) { 
-    <tr>
-        <td>@user.UserName</td>
-        <td>@Html.EditorFor(u => u.Banned)</td>
-    </tr>
-}
-</table>
+    @if (SessionManager.CurrentUser != null && SessionManager.CurrentUser.Type == Lab2.Models.Entities.User.UserType.Admin) { 
+        @Html.ActionLink("Admin", "AdminPanel", "Users")
+    }

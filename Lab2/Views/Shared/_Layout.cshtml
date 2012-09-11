@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Lab2.Models.SessionManager
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -20,6 +21,7 @@
             </div>
             <nav>
                 <ul id="menu">
+                    <li>@Html.Partial("_AdminPanel")</li>
                     <li>@Html.ActionLink("Users", "Index", "Users")</li>
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
