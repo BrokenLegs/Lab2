@@ -3,10 +3,9 @@
 }
 @using Lab2.Models.Entities
 @using Lab2.ViewModels
-
+@using Lab2.Models.SessionManager
 @model ThreadViewModel
-           
-@Html.ActionLink("Create Post", "CreatePost" + "/" + Model.Thread.ID)
+  @Html.Partial("_CreatePost", Model.Thread.ID)
 <h2>@Html.LabelFor(ft => ft.Thread.Title) : @Model.Thread.Title</h2>
 
 <table>

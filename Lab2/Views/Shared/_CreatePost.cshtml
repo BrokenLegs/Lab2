@@ -1,0 +1,16 @@
+﻿@model Guid
+@using Lab2.Models.SessionManager
+@using Lab2.Models.Entities
+
+
+@if (SessionManager.CurrentUser != null) {
+
+    if (SessionManager.CurrentUser.Banned != true) {
+        if (Model == Guid.Empty || Model == null) {
+            <p>@Html.ActionLink("Create Post", "CreatePost")</p>
+        }
+        else {
+            <p>@Html.ActionLink("Create Post", "CreatePost", new { threadID = Model })</p>
+        }
+    }
+}

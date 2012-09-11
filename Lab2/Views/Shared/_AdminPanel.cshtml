@@ -1,0 +1,15 @@
+﻿
+
+
+<table>
+<tr>
+    <th>User</th>
+    <th>Banned</th>
+</tr>
+@foreach (var user in Model) { 
+    <tr>
+        <td>@user.UserName</td>
+        <td>@Html.EditorFor(u => u.Banned)</td>
+    </tr>
+}
+</table>

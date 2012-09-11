@@ -152,6 +152,10 @@ namespace Lab2.Models.Repositories
             return All<ForumThread>().Where(t => t.ID == id).ToList();
         }
 
+        public List<User> GetSiteAdmins() {
+
+            return All<User>().OrderBy(u => u.FullName).Where(u => u.Type == User.UserType.Admin).ToList();
+        }
         
 
     }

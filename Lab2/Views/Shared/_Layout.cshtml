@@ -16,7 +16,7 @@
                 <h1>My MVC Application</h1>
             </div>
             <div id="logindisplay">
-                @Html.Partial("_LogOnPartial")
+                @Html.Partial("_LogOnPartial");
             </div>
             <nav>
                 <ul id="menu">
@@ -31,6 +31,8 @@
             @RenderBody()
         </section>
         <footer>
+            @Html.Partial("_FooterPartial")
+            
         </footer>
     </div>
 </body>

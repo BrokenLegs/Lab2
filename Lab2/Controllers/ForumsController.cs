@@ -27,9 +27,12 @@ namespace Lab2.Controllers
         }
 
         //Post: Get/
-        public ActionResult CreatePost() {
-
-            return View();
+        [Authorize]
+        public ActionResult CreatePost(Guid? threadID = null) {
+            var post = new Post();
+            if (threadID.HasValue)
+                post.ThreadID = threadID.Value;
+            return View(post);
         }
         //Post: /Create/
         [HttpPost]
@@ -45,10 +48,10 @@ namespace Lab2.Controllers
 
                     Repository.Instance.Save<ForumThread>(thread);
                     Repository.Instance.Save<Post>(post);
-
-                    return RedirectToAction("Thread" + "/" + thread.ID, "Forums");
+                    return RedirectToAction("Thread", new { id = thread.ID });
                 }
                 else {
+                    post.CreateDate = DateTime.Now;
                     Repository.Instance.Save<Post>(post);
                     return RedirectToAction("Thread", new { id = post.ThreadID });
                 }

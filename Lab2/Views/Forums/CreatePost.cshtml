@@ -11,9 +11,10 @@
 <h2>CreatePost</h2>
 
 @{ Html.EnableClientValidation(true); }
-@using (Html.BeginForm()) { 
+@using (Html.BeginForm("CreatePost", "Forums", new { threadId = Model.ThreadID })) { 
 <div>
     <p>
+        @Html.HiddenFor(p => p.ThreadID)
         <span>@Html.LabelFor(p => p.Title)</span>
         @Html.EditorFor(p => p.Title) 
         <span>@Html.ValidationMessageFor(p => p.Title)</span>

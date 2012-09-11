@@ -62,5 +62,14 @@ namespace Lab2.Controllers
 
             return View();
         }
+
+        public ActionResult _FooterPartial() {
+            //används inte men kan användas med @html.action("")
+          
+            List<User> admins = Repository.Instance.GetSiteAdmins();
+            return PartialView(admins);
+        }
+
+       
     }
 }

@@ -1,37 +1,13 @@
-﻿@using Lab2.Models.Entities
-@using Lab2.Models.SessionManager
-@model List<ForumThread>
+﻿
+
+
 @{
     ViewBag.Title = "Forum";
    
 
 }
- @Html.ActionLink("Create post", "CreatePost")
+@Html.Partial("_CreatePost", new Guid())
 <h2>Forum</h2>
-       
-   
 
 
- <table>
-    <tr>
-        <th>
-            @Html.LabelFor(p => p.FirstOrDefault().Title)
-        </th>
-        <th>
-            @Html.LabelFor(p => p.FirstOrDefault().CreateDate)
-        </th>
-    </tr>
-    @foreach (var thread in Model) 
-    {
-    
-     <tr>
-        <td>
-           @Html.ActionLink(thread.Title, "Thread" + "/" + thread.ID)
-        </td>
-        <td>
-           @thread.CreateDate
-        </td>
-    </tr>
-        
-    }
- </table>
+@Html.DisplayForModel("ForumThread")

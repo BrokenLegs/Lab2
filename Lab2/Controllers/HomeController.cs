@@ -19,5 +19,6 @@ namespace Lab2.Controllers
         {
             return View();
         }
+
     }
 }

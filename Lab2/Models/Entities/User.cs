@@ -14,11 +14,13 @@ namespace Lab2.Models.Entities
         public User() { ID = Guid.NewGuid(); }
         public User(string name, UserType type)
         {
+            Banned = false;
             ID = Guid.NewGuid();
             UserName = name;
             Type = type;
         }
 
+        public bool Banned { get; set; }
         public Guid ID { get; set; }
         [Required(ErrorMessage="UserName is required!")]
         public string UserName { get; set; }
@@ -76,5 +78,7 @@ namespace Lab2.Models.Entities
             Admin,
             SuperUser
         }
+
+        
     }
 }
